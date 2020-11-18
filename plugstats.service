@@ -1,0 +1,14 @@
+[Unit]
+Description=PlugStats
+After=network-online.target
+
+[Service]
+User=pi
+Type=notify
+Environment=PYTHONUNBUFFERED=true
+ExecStart=/usr/bin/python3 /home/pi/smartplug/plugstats.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
